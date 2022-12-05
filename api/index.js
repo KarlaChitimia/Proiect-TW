@@ -3,6 +3,7 @@ const app = express();
 const mongoose = require("mongoose");
 const authRoute = require("../api/routes/auth");
 const usersRoute = require("../api/routes/users");
+const moviesRoute = require("../api/routes/movies");
 const dotenv = require("dotenv");
 
 dotenv.config("./.env");
@@ -15,6 +16,7 @@ app.use(express.json());
 
 app.use("", authRoute);
 app.use("/users", usersRoute);
+app.use("", moviesRoute)
 
 app.listen(8800, () =>{
     console.log('http://localhost:8800/')
